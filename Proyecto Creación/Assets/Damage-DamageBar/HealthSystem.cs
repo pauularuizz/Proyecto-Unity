@@ -7,7 +7,7 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
 {   [SerializeField]
     PlayerInfo PlayerInfo;
 
-    float _currentHealth;
+    [SerializeField]float _currentHealth;
     [SerializeField]
     float _maxHealth = 100;
 

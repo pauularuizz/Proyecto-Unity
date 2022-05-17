@@ -14,6 +14,10 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
             damageTaker.TakeDamage(Damage);
             
-        }
+        } 
+    }
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }

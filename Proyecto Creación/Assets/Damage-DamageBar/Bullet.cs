@@ -11,8 +11,9 @@ public class Bullet : MonoBehaviour
 
         if (damageTaker!=null)
         {
-            damageTaker.TakeDamage(Damage);
             Destroy(gameObject);
+            damageTaker.TakeDamage(Damage);
+            
         }
     }
 }

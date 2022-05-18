@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float Damage = 42;
+    [SerializeField] public float Damage ;
     private void OnTriggerEnter2D(Collider2D other)
     {
         var damageTaker = other.GetComponent<ITakeDamage>();
@@ -14,10 +14,12 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
             damageTaker.TakeDamage(Damage);
             
-        } 
+        }
+        Destroy(gameObject);
     }
-    private void OnBecameInvisible()
+    private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
     }
+    
 }

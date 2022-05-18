@@ -7,8 +7,10 @@ using Random = UnityEngine.Random;
 
 public class EmenyAI : MonoBehaviour
 {
-    
+    private Vector2 movement;
+    private Rigidbody2D rb;
     public float Speed;
+
    public enum EState
     {
         Idle, Wander, Attack
@@ -27,6 +29,7 @@ public class EmenyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rb = this.GetComponent<Rigidbody2D>();
         FillDictionary();
         _currentState = EState.Idle;
         _currentTime = 0;
@@ -96,6 +99,10 @@ public class EmenyAI : MonoBehaviour
         //do my stuff
         _direction = (_player.position - transform.position).normalized;
         transform.position += _direction * Time.deltaTime * Speed;
+        float angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
+        rb.rotation = angle;
+        _direction.Normalize();
+        movement = _direction;
         //check transition
 
         if (!IsPlayerNear())
@@ -104,13 +111,25 @@ public class EmenyAI : MonoBehaviour
         }
 
     }
+    void moveCharacter(Vector2 direction)
+    {
+        rb.MovePosition((Vector2)transform.position + (direction * Speed * Time.deltaTime));
+    }
+    private void FixedUpdate()
+    {
+        moveCharacter(movement);
+    }
 
     private void UpdateWander()
     {
 
         //do my stuff
-        transform.position += _direction * Time.deltaTime * Speed;
+       
         _currentTime += Time.deltaTime;
+        float angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
+        rb.rotation = angle;
+        _direction.Normalize();
+        movement = _direction;
         //check transitions
         if (_currentTime > 4)
         {

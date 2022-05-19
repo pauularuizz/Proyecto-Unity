@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Animation
+  m_Name: SoldadoAndar
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,11 +20,11 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 53a892f7a6bcd4536bfcb843bdd44a7f, type: 3}
+      value: {fileID: 21300000, guid: 24878a3fc626a4ae892383ad6f590422, type: 3}
     - time: 0.33333334
-      value: {fileID: 21300000, guid: 65a96c58ebeb04735af8c872b4712390, type: 3}
-    - time: 0.6666667
-      value: {fileID: 21300000, guid: 53a892f7a6bcd4536bfcb843bdd44a7f, type: 3}
+      value: {fileID: 21300000, guid: 2e3a23f08f6944f23945e11ee80d68c2, type: 3}
+    - time: 0.68333334
+      value: {fileID: 21300000, guid: 24878a3fc626a4ae892383ad6f590422, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,15 +44,15 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 53a892f7a6bcd4536bfcb843bdd44a7f, type: 3}
-    - {fileID: 21300000, guid: 65a96c58ebeb04735af8c872b4712390, type: 3}
-    - {fileID: 21300000, guid: 53a892f7a6bcd4536bfcb843bdd44a7f, type: 3}
+    - {fileID: 21300000, guid: 24878a3fc626a4ae892383ad6f590422, type: 3}
+    - {fileID: 21300000, guid: 2e3a23f08f6944f23945e11ee80d68c2, type: 3}
+    - {fileID: 21300000, guid: 24878a3fc626a4ae892383ad6f590422, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.68333334
+    m_StopTime: 0.7
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

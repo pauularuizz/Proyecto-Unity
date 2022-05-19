@@ -10,7 +10,8 @@ public class EmenyAI : MonoBehaviour
     private Vector2 movement;
     private Rigidbody2D rb;
     public float Speed;
-
+    //SpriteRenderer renderer;
+    public Animator ani;
    public enum EState
     {
         Idle, Wander, Attack
@@ -46,13 +47,14 @@ public class EmenyAI : MonoBehaviour
 
         }
 
-        States[EState.Idle].OnEnter = () => _currentTime = 0;
+        States[EState.Idle].OnEnter = () => { _currentTime = 0; /*ani.SetBool("Idle", false);*/ };
         States[EState.Wander].OnEnter = () => 
         {
             _currentState = 0;
             _direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0).normalized;
+            //ani.SetBool("Wander", false);
         };
-        States[EState.Attack].OnEnter = () => _currentTime = 0;
+        States[EState.Attack].OnEnter = () => { _currentTime = 0; /*ani.SetBool("Attack", false);*/ };
 
 
         States[EState.Idle].OnStay = UpdateIdle;
@@ -103,6 +105,11 @@ public class EmenyAI : MonoBehaviour
         rb.rotation = angle;
         _direction.Normalize();
         movement = _direction;
+        //if (!(Vector2.Distance(transform.position,_player.transform.position)>1&&_currentState!=EState.Attack))
+        //{
+            
+             
+        //}
         //check transition
 
         if (!IsPlayerNear())
@@ -144,6 +151,14 @@ public class EmenyAI : MonoBehaviour
     }
     private bool IsPlayerNear()
     {
+
         return Vector2.Distance(transform.position, _player.position) < 4;
     }
+    //private  Render()
+    //{
+    //    if (IsPlayerNear())
+    //    {
+    //        return renderer = ;
+    //    }
+    //}
 }

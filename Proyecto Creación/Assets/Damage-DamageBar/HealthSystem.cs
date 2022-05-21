@@ -2,12 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class HealthSystem : MonoBehaviour, ITakeDamage
-{   [SerializeField]
+{  
+    [SerializeField]
     PlayerInfo PlayerInfo;
 
-    [SerializeField]float _currentHealth;
+    [SerializeField] float _currentHealth;
     [SerializeField]
     float _maxHealth = 100;
 
@@ -23,17 +26,25 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
     {
         _currentHealth -= damage;
         PlayerHealthChange?.Invoke(_currentHealth/_maxHealth);
-        if (_currentHealth<=0)
-        {
-            _currentHealth = 0;
-            Die();
-        }
+       
     }
 
     private void Die()
     {
         PlayerDeath?.Invoke(PlayerInfo);
         Destroy(gameObject);
+    }
+    
+    public Slider BarraVidaEnemigo;
+
+    private void Update()
+    {
+        BarraVidaEnemigo.value = _currentHealth;
+        if (_currentHealth <= 0)
+        {
+
+            Die();
+        }
     }
 }
 [Serializable]

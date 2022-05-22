@@ -112,6 +112,7 @@ public class EmenyAI : MonoBehaviour
         //}
         //check transition
 
+
         if (!IsPlayerNear())
         {
             ChangeState(EState.Idle);
@@ -151,8 +152,15 @@ public class EmenyAI : MonoBehaviour
     }
     private bool IsPlayerNear()
     {
+        
 
         return Vector2.Distance(transform.position, _player.position) < 4;
+    }
+    private void OnTriggerEnter2D(Collider2D Player)
+    {
+        ChangeState(EState.Attack);
+
+        
     }
     //private  Render()
     //{

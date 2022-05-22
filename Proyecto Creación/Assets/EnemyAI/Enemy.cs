@@ -8,14 +8,16 @@ public class Enemy : MonoBehaviour, ITakeDamage
     private Rigidbody2D rb;
     [SerializeField]
     public float Damage;
-    private void OnTriggerEnter2D(Collider2D bullet)
+    
+    private void OnTriggerEnter2D(Collider2D trigger)
     {
-        var damageTaker = bullet.GetComponent<ITakeDamage>();
+        var damageTaker = trigger.GetComponent<ITakeDamage>();
 
-        if (damageTaker != null)
+        if (damageTaker != null&&trigger.CompareTag("Player"))
         {
            
             damageTaker.TakeDamage(Damage);
+
                Destroy(gameObject);
         }
       
@@ -28,11 +30,7 @@ public class Enemy : MonoBehaviour, ITakeDamage
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        Vector3 direction = player.position - transform.position; 
-
-    }
+    
     public void TakeDamage(float amount)
     {
         Destroy(gameObject);

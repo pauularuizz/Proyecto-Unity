@@ -154,7 +154,7 @@ public class EmenyAI : MonoBehaviour
     {
         
 
-        return Vector2.Distance(transform.position, _player.position) < 4;
+        return Vector2.Distance(transform.position, _player.position) < 20;
     }
     private void OnTriggerEnter2D(Collider2D Player)
     {

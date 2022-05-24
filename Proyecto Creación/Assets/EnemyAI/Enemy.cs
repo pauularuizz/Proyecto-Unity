@@ -31,10 +31,11 @@ public class Enemy : MonoBehaviour, ITakeDamage
         {
 
             damageTaker.TakeDamage(damageStaying);
-
+            Debug.Log("daño staying");
 
         }
     }
+    
 
     // Start is called before the first frame update
     void Start()

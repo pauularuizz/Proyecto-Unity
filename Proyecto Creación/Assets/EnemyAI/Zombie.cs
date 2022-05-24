@@ -58,7 +58,6 @@ public class Zombie : MonoBehaviour
                 if (hit2.collider.gameObject.tag=="Wall")
                 {
                
-
                     if (clockwise==false)
                     {
                     transform.Rotate(0, 0, 90);

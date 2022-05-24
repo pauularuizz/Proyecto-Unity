@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1301926988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604322599373296242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62616b3d697afe148bb219f708923e73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 30
+  damageStaying: 2
+--- !u!1001 &4353378161475234266
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 765737055, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1288347615, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1288347615, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1474071921, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80, type: 3}
+      propertyPath: m_Name
+      value: SliderEnemigo4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598822651, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598822651, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598822651, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3000716007901724530, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3038237291235146664, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80,
+        type: 3}
+      propertyPath: m_Name
+      value: Zombie bueno creo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3038237291235146665, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3038237291235146665, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.9873111
+      objectReference: {fileID: 0}
+    - target: {fileID: 3038237291235146665, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.9873111
+      objectReference: {fileID: 0}
+    - target: {fileID: 3038237291235146665, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.9008284
+      objectReference: {fileID: 0}
+    - target: {fileID: 3038237291235146665, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.924331
+      objectReference: {fileID: 0}
+    - target: {fileID: 3038237291235146665, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 40.619408
+      objectReference: {fileID: 0}
+    - target: {fileID: 3038237291235146665, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3038237291235146665, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3038237291235146665, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3038237291235146665, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3038237291235146665, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3038237291235146665, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3038237291235146665, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3038237291235146667, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80, type: 3}
+--- !u!1 &1604322599373296242 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3038237291235146664, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80,
+    type: 3}
+  m_PrefabInstance: {fileID: 4353378161475234266}
+  m_PrefabAsset: {fileID: 0}

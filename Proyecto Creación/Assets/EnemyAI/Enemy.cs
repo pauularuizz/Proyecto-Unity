@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour, ITakeDamage
 {
-    public Transform player;
+   
     private Rigidbody2D rb;
     [SerializeField]
     public float Damage;
+    public float damageStaying;
     
     private void OnTriggerEnter2D(Collider2D trigger)
     {
@@ -18,9 +19,21 @@ public class Enemy : MonoBehaviour, ITakeDamage
            
             damageTaker.TakeDamage(Damage);
 
-               Destroy(gameObject);
+
         }
       
+    }
+    private void OnTriggerStay(Collider trigger)
+    {
+        var damageTaker = trigger.GetComponent<ITakeDamage>();
+
+        if (damageTaker != null && trigger.CompareTag("Player"))
+        {
+
+            damageTaker.TakeDamage(damageStaying);
+
+
+        }
     }
 
     // Start is called before the first frame update

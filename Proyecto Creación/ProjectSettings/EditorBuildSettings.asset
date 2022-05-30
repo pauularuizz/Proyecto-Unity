@@ -6,4 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/TopDownGunPack/Scenes/Demo Scene.unity
+    path: "Assets/Escena Men\xFA.unity"
+    guid: 32e59f9e0f2b651429fec5b4d0efc6af
+  - enabled: 1
+    path: Assets/Scenes/Joseba.unity
+    guid: bbefa7e9409bed740a451a00beae1e76
+  m_configObjects: {}

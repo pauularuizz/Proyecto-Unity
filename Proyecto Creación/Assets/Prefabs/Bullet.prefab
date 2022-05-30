@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2664143138420756551}
   - component: {fileID: 2664143138420756544}
   m_Layer: 0
-  m_Name: Door 1
+  m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -239,6 +239,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.015625887, y: 0.01689907}
-  m_Size: {x: 0.64132875, y: 0.22990845}
+  m_Offset: {x: -0.008416565, y: 0.02419464}
+  m_Size: {x: 0.35716835, y: 0.15209535}
   m_Direction: 1

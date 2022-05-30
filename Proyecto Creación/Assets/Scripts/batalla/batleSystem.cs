@@ -36,8 +36,12 @@ public class batleSystem : MonoBehaviour
         Debug.Log("StartBattle");
         state = State.Active;
 
+        foreach (var item in enemySpawnArray)
+        {
+            item.Spawn();
+        }
         
-        spawner.Spawn();
+        //spawner.Spawn();
 
 
     }

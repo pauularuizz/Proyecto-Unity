@@ -18,7 +18,9 @@ public class MovimientoPlayer2 : MonoBehaviour
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
     [SerializeField] private TrailRenderer tr;
-     
+
+
+    private ParticleSystem _Ps;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,12 @@ public class MovimientoPlayer2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _Ps = GetComponent<ParticleSystem>();
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("killo");
+            _Ps.Play();
+        }
         if (isDashing)
         {
             return;
@@ -73,4 +81,6 @@ public class MovimientoPlayer2 : MonoBehaviour
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }
+
+   
 }

@@ -7,7 +7,8 @@ public class Key : MonoBehaviour
     [SerializeField] private KeyType keyType;
     public enum KeyType
     {
-        Red,Green,Yellow
+        Red,Green,Yellow,Blue
+
     }
 
     public KeyType GetKeyType()

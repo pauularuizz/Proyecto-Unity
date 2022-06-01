@@ -8,6 +8,7 @@ public class PointAndShoot : MonoBehaviour
     public GameObject player;
     public GameObject bulletPrefab;
     public GameObject bulletStart;
+    [SerializeField] private FieldOfView fieldOfView;
    
     public float bulletSpeed = 60.0f;
 
@@ -29,6 +30,8 @@ public class PointAndShoot : MonoBehaviour
         Vector3 difference = target - player.transform.position;
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         player.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
+        
+        
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -40,8 +43,12 @@ public class PointAndShoot : MonoBehaviour
             
             fireBullet(direction, rotationZ);
             
+
         }
-        
+       
+        fieldOfView.SetOrigin(player.transform.position);
+        fieldOfView.SetAimDirection(difference);
+
     }
     void fireBullet(Vector2 direction, float rotationZ)
     {

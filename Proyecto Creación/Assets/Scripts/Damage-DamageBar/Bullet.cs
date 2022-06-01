@@ -16,7 +16,8 @@ public class Bullet : MonoBehaviour
             damageTaker.TakeDamage(Damage);
 
         }
-        Destroy(gameObject);
+        if(other.isTrigger==false)
+             Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -21,9 +21,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 765737051, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 765737055, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80, type: 3}
       propertyPath: m_Camera
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1288347614, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1288347615, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80, type: 3}
       propertyPath: m_AnchorMax.x
@@ -33,9 +41,21 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1422527280, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 1474071921, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80, type: 3}
       propertyPath: m_Name
       value: SliderEnemigo4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1474071921, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598822650, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1598822651, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80, type: 3}
       propertyPath: m_AnchorMax.x
@@ -49,6 +69,14 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1799416090, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1979941583, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 3000716007901724530, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80,
         type: 3}
       propertyPath: m_Enabled
@@ -58,6 +86,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Zombie bueno creo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3038237291235146664, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3038237291235146665, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80,
         type: 3}

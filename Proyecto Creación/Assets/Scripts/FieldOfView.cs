@@ -18,8 +18,8 @@ public class FieldOfView : MonoBehaviour
     {
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
-        fov = 70.0f;
-        viewDistance = 3f;
+        fov = 90.0f;
+        viewDistance = 5f;
         
         origin = Vector3.zero;
         isAimDownSights = false;
@@ -44,13 +44,15 @@ public class FieldOfView : MonoBehaviour
         {
            Vector3 vertex;
            RaycastHit2D raycastHit2D=Physics2D.Raycast(origin, GetVectorFromAngle(angle), viewDistance, layerMask);
-           
-           if (raycastHit2D.collider==null)
-           {
+
+          
+            if (raycastHit2D.collider==null)
+            {
                 vertex = origin + GetVectorFromAngle(angle) * viewDistance;
-           }
+            }
            else
-           {
+           {    
+
                 vertex = raycastHit2D.point;
            }
 
@@ -72,6 +74,7 @@ public class FieldOfView : MonoBehaviour
         mesh.vertices = vertices;
         mesh.uv = uv;
         mesh.triangles = triangles;
+        mesh.bounds = new Bounds(origin, Vector3.one * 1000f);
 
         if (Input.GetMouseButtonDown(1))
         {
@@ -80,14 +83,14 @@ public class FieldOfView : MonoBehaviour
             {
                 
                 SetFoV(40f);
-                SetViewDistance(6f);
+                SetViewDistance(9f);
             }
             else
             {
                 
 
                 SetFoV(90f);
-                SetViewDistance(3f);
+                SetViewDistance(5f);
             }
             
         }

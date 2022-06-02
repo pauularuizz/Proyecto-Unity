@@ -35,7 +35,7 @@ public class MovimientoPlayer2 : MonoBehaviour
         _Ps = GetComponent<ParticleSystem>();
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("killo");
+           
             _Ps.Play();
         }
         if (isDashing)

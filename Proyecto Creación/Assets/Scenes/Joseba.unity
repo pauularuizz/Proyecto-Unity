@@ -86274,7 +86274,7 @@ GameObject:
   - component: {fileID: 149216132}
   - component: {fileID: 149216134}
   - component: {fileID: 149216133}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86485,7 +86485,7 @@ GameObject:
   - component: {fileID: 196323700}
   - component: {fileID: 196323702}
   - component: {fileID: 196323701}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: soldier_legs_0002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86724,7 +86724,7 @@ Transform:
   m_GameObject: {fileID: 269212863}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7.012926, y: 7.012926, z: 7.012926}
+  m_LocalScale: {x: 3.7780554, y: 3.7780554, z: 3.7780554}
   m_Children: []
   m_Father: {fileID: 299183957}
   m_RootOrder: 2
@@ -86996,8 +86996,9 @@ MonoBehaviour:
   PlayerInfo:
     Name: 
     Age: 0
-  _currentHealth: 100
-  _maxHealth: 100
+  _currentHealth: 10000
+  _maxHealth: 10000
+  _PsE: {fileID: 0}
   BarraVidaEnemigo: {fileID: 2109783998}
 --- !u!114 &299183961
 MonoBehaviour:
@@ -91908,6 +91909,7 @@ GameObject:
   - component: {fileID: 324992299}
   - component: {fileID: 324992298}
   - component: {fileID: 324992297}
+  - component: {fileID: 324992301}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -91995,6 +91997,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &324992301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324992296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 863febb46f8da79478b9387d489d4411, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &336997809
 GameObject:
   m_ObjectHideFlags: 0
@@ -92450,7 +92464,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 86.3, y: 182.3}
+  m_AnchoredPosition: {x: 230.64, y: 185.64}
   m_SizeDelta: {x: -461.27573, y: -371.27573}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &421798600
@@ -92957,7 +92971,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 585021732}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92991,7 +93005,7 @@ GameObject:
   - component: {fileID: 588192232}
   - component: {fileID: 588192231}
   - component: {fileID: 588192230}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: CanvasEnemigos (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93215,7 +93229,7 @@ GameObject:
   - component: {fileID: 607822492}
   - component: {fileID: 607822494}
   - component: {fileID: 607822493}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93492,10 +93506,10 @@ RectTransform:
   m_Father: {fileID: 342801603}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -39.374023, y: -39.374023}
+  m_AnchoredPosition: {x: -37.907, y: -37.907}
+  m_SizeDelta: {x: 36.625977, y: 36.625977}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &616496940
 MonoBehaviour:
@@ -103506,7 +103520,7 @@ GameObject:
   m_Component:
   - component: {fileID: 857325467}
   - component: {fileID: 857325466}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Crosshair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104517,6 +104531,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BOSS
       objectReference: {fileID: 0}
+    - target: {fileID: 109350167422750058, guid: 6f145137e3f26954a9a1a7f29e6e9186,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 109350167422750059, guid: 6f145137e3f26954a9a1a7f29e6e9186,
         type: 3}
       propertyPath: m_RootOrder
@@ -104707,7 +104726,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1034793233}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105819,6 +105838,7 @@ GameObject:
   - component: {fileID: 1248201876}
   - component: {fileID: 1248201875}
   - component: {fileID: 1248201874}
+  - component: {fileID: 1248201877}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -105906,6 +105926,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1248201877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248201872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 863febb46f8da79478b9387d489d4411, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1274493473
 GameObject:
   m_ObjectHideFlags: 0
@@ -106882,7 +106914,7 @@ GameObject:
   - component: {fileID: 1526056557}
   - component: {fileID: 1526056556}
   - component: {fileID: 1526056561}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107765,7 +107797,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1596830791}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109013,7 +109045,7 @@ GameObject:
   - component: {fileID: 1826633072}
   - component: {fileID: 1826633074}
   - component: {fileID: 1826633073}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110775,7 +110807,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2114737658}
   - component: {fileID: 2114737659}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: BarraBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}

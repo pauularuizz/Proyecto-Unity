@@ -18,8 +18,8 @@ public class FieldOfView : MonoBehaviour
     {
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
-        fov = 90.0f;
-        viewDistance = 5f;
+        fov = 360.0f;
+        viewDistance = 2.5f;
         
         origin = Vector3.zero;
         isAimDownSights = false;
@@ -28,7 +28,7 @@ public class FieldOfView : MonoBehaviour
     private void LateUpdate()
     {
          
-        int rayCount = 50;
+        int rayCount = 360;
         float angle = startingAngle ;
         float angleIncrease = fov / rayCount;
 
@@ -82,15 +82,15 @@ public class FieldOfView : MonoBehaviour
             if (isAimDownSights)
             {
                 
-                SetFoV(40f);
+                SetFoV(30f);
                 SetViewDistance(9f);
             }
             else
             {
                 
 
-                SetFoV(90f);
-                SetViewDistance(5f);
+                SetFoV(360f);
+                SetViewDistance(2.5f);
             }
             
         }

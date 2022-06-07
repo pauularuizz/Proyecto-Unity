@@ -13,6 +13,8 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
     [SerializeField] float _currentHealth;
     [SerializeField]
     float _maxHealth = 100;
+    public ParticleSystem _PsE;
+    
 
     public static Action <PlayerInfo> PlayerDeath;
     public static Action<float > PlayerHealthChange;
@@ -24,6 +26,11 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
     public float CurrentHealth => _currentHealth;
     public void TakeDamage(float damage)
     {
+        //_PsE = GetComponent<ParticleSystem>();
+        //_PsE.Play();
+        Instantiate(_PsE, transform.position, transform.rotation);
+       
+        Debug.Log("En teoria sale sangre");
         _currentHealth -= damage;
         PlayerHealthChange?.Invoke(_currentHealth/_maxHealth);
        

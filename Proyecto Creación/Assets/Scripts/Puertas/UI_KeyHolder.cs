@@ -31,8 +31,10 @@ public class UI_KeyHolder : MonoBehaviour
         foreach (Transform child in container)
         {
             if (child == keyTemplate) continue;
+
             Destroy(child.gameObject);
-           
+            keyTemplate.gameObject.SetActive(false);
+
         }
         List<Key.KeyType> keyList = keyHolder.GetKeyList();
         for (int i = 0; i < keyList.Count; i++)
@@ -61,6 +63,7 @@ public class UI_KeyHolder : MonoBehaviour
                 
                   
             }
+
         }
     }
 

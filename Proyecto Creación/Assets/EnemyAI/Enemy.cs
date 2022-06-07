@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour, ITakeDamage
     [SerializeField]
     public float Damage;
     public float damageStaying;
-    
+    private ParticleSystem _PsE;
     private void OnTriggerEnter2D(Collider2D trigger)
     {
         var damageTaker = trigger.GetComponent<ITakeDamage>();
@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour, ITakeDamage
 
 
         }
+       
       
     }
     private void OnTriggerStay(Collider trigger)
@@ -31,9 +32,18 @@ public class Enemy : MonoBehaviour, ITakeDamage
         {
 
             damageTaker.TakeDamage(damageStaying);
+
             Debug.Log("daño staying");
 
         }
+        //if (trigger.CompareTag("Bullet"))
+        //{
+        //    Debug.Log("bullet enter");
+
+        //    _PsE.Play();
+
+
+        //}
     }
     
 

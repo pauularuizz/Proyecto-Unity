@@ -74,6 +74,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5075207521714815529, guid: 978c1b22a9e559147b42d66892268279,
         type: 3}
+    - target: {fileID: 1682004324, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80, type: 3}
+      propertyPath: deathBlood
+      value: 
+      objectReference: {fileID: 21300000, guid: 4b7d919d4bda7ac4b999983a6506b5fd,
+        type: 3}
+    - target: {fileID: 1682004324, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80, type: 3}
+      propertyPath: ParticleSystemPrefab
+      value: 
+      objectReference: {fileID: 5075207521714815529, guid: 978c1b22a9e559147b42d66892268279,
+        type: 3}
     - target: {fileID: 1799416090, guid: 9d80d99a2a822ac4a9f3b2a168ab2c80, type: 3}
       propertyPath: m_Layer
       value: 11

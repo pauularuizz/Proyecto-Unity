@@ -66,6 +66,8 @@ public class MovimientoPlayer2 : MonoBehaviour
         playerRb.MovePosition(playerRb.position + moveInput * speed * Time.fixedDeltaTime);
 
     }
+
+  
     
     private IEnumerator Dash()
     {

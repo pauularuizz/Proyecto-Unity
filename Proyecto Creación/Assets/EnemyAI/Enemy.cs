@@ -5,11 +5,11 @@ using UnityEngine;
 public class Enemy : MonoBehaviour, ITakeDamage
 {
    
-    private Rigidbody2D rb;
+    
     [SerializeField]
     public float Damage;
     public float damageStaying;
-    private ParticleSystem _PsE;
+  
     private void OnTriggerEnter2D(Collider2D trigger)
     {
         var damageTaker = trigger.GetComponent<ITakeDamage>();
@@ -36,21 +36,14 @@ public class Enemy : MonoBehaviour, ITakeDamage
             Debug.Log("daño staying");
 
         }
-        //if (trigger.CompareTag("Bullet"))
-        //{
-        //    Debug.Log("bullet enter");
-
-        //    _PsE.Play();
-
-
-        //}
+        
     }
     
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = this.GetComponent<Rigidbody2D>();
+       
     }
 
     // Update is called once per frame

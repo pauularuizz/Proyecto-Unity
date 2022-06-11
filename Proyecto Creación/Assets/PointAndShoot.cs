@@ -13,16 +13,24 @@ public class PointAndShoot : MonoBehaviour
     //recarga
     [SerializeField]private const float cargador = 10;
     [SerializeField] private float bulletsLeft=10;
-    [SerializeField] public float recargaDelay = 3f;
+    [SerializeField] public float recargaDelay = 2f;
     [SerializeField] public float bulletSpeed = 60.0f;
     [SerializeField] private bool canShoot=true;
 
     private Vector3 target;
 
+    //sonido
+    private SoundManager soundManager;
+
     // Use this for initialization
     void Start()
     {
         Cursor.visible = false;
+        
+    }
+    private void Awake()
+    {
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     // Update is called once per frame
@@ -48,7 +56,7 @@ public class PointAndShoot : MonoBehaviour
             
                 fireBullet(direction, rotationZ);
             }
-
+           
            
             
 
@@ -68,6 +76,7 @@ public class PointAndShoot : MonoBehaviour
     {
         if (canShoot)
         {
+            soundManager.AudioSelector(0, 0.7f);
             GameObject b = Instantiate(bulletPrefab) as GameObject;
             b.transform.position = bulletStart.transform.position;
             b.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
@@ -80,11 +89,15 @@ public class PointAndShoot : MonoBehaviour
 
     IEnumerator Recagar()
     {
-        Debug.Log("recaargando");
+       
+        Debug.Log("recargando");
         canShoot = false;
-
+        soundManager.AudioSelector(1, 0.25f);
         yield return new WaitForSeconds(recargaDelay);
-        canShoot = true;    
+        soundManager.AudioSelector(3, 0.25f);
+        canShoot = true;
+        Debug.Log("recarga completadad");
+        
     }
     //private IEnumerator Dash()
     //{

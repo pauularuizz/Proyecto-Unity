@@ -6,14 +6,18 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField]
     public float Damage;
+ 
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         var damageTaker = other.GetComponent<ITakeDamage>();
 
         if (damageTaker != null)
         {
+            
             Destroy(gameObject);
             damageTaker.TakeDamage(Damage);
+           
 
         }
         if(other.isTrigger==false)

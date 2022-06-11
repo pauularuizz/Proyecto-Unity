@@ -12,7 +12,9 @@ public class EmenyAI : MonoBehaviour
     public float Speed;
     //SpriteRenderer renderer;
     public Animator ani;
-   public enum EState
+
+    private SoundManager soundManager;
+    public enum EState
     {
         Idle, Wander, Attack
     }
@@ -36,6 +38,10 @@ public class EmenyAI : MonoBehaviour
         _currentTime = 0;
         _player = GameObject.FindGameObjectWithTag("Player").transform;
 
+    }
+    private void Awake()
+    {
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     void FillDictionary()
@@ -90,6 +96,7 @@ public class EmenyAI : MonoBehaviour
         if (IsPlayerNear())
         {
             //change to attack
+            
             ChangeState(EState.Attack);
         }
         

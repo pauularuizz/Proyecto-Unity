@@ -34,6 +34,7 @@ TagManager:
   - Objects
   - Black
   - Crosshair
+  - punto player i enemigos
   - 
   - 
   - 
@@ -49,8 +50,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - minimapa
   m_SortingLayers:
   - name: Default
     uniqueID: 0

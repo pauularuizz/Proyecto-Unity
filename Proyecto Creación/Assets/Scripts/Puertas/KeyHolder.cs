@@ -7,8 +7,10 @@ public class KeyHolder : MonoBehaviour
 {
     public event EventHandler OnKeysChanged;
     private List<Key.KeyType> keyList;
+    private SoundManager soundManager;
     private void Awake()
     {
+        soundManager = FindObjectOfType<SoundManager>();
         keyList = new List<Key.KeyType>();
     }
     public List<Key.KeyType> GetKeyList()
@@ -19,6 +21,7 @@ public class KeyHolder : MonoBehaviour
     {
         Debug.Log("llave a;adida:" + keyType);
         keyList.Add(keyType);
+        
         OnKeysChanged?.Invoke(this, EventArgs.Empty);
     }
     public void RemoveKey(Key.KeyType keyType)
@@ -36,8 +39,11 @@ public class KeyHolder : MonoBehaviour
         Key key = collider.GetComponent<Key>();
         if (key!=null)
         {
+            
             AddKey(key.GetKeyType());
+            
             Destroy(key.gameObject);
+            soundManager.AudioSelector(2, 0.8f);
         }
 
         Door door = collider.GetComponent<Door>();

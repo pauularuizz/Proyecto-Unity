@@ -9,7 +9,9 @@ public class Enemy : MonoBehaviour, ITakeDamage
     [SerializeField]
     public float Damage;
     public float damageStaying;
+
   
+
     private void OnTriggerEnter2D(Collider2D trigger)
     {
         var damageTaker = trigger.GetComponent<ITakeDamage>();
@@ -50,6 +52,7 @@ public class Enemy : MonoBehaviour, ITakeDamage
     
     public void TakeDamage(float amount)
     {
+        
         Destroy(gameObject);
     }
 }

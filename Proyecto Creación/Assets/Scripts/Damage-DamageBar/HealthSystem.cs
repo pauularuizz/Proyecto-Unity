@@ -18,6 +18,8 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
 
     public static Action <PlayerInfo> PlayerDeath;
     public static Action<float > PlayerHealthChange;
+
+   
     private void Start()
     {
         _currentHealth = _maxHealth;
@@ -29,9 +31,10 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
     {
       
         Instantiate(ParticleSystemPrefab, transform.position, transform.rotation);
-       
+        
         Debug.Log("En teoria sale sangre");
         _currentHealth -= damage;
+        
         PlayerHealthChange?.Invoke(_currentHealth/_maxHealth);
        
     }
@@ -48,8 +51,10 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
 
     private void Die()
     {
+        
         PlayerDeath?.Invoke(PlayerInfo);
         Destroy(gameObject);
+        
     }
     
     public Slider BarraVidaEnemigo;
@@ -59,7 +64,7 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
         BarraVidaEnemigo.value = _currentHealth;
         if (_currentHealth <= 0)
         {
-
+            
             Die();
         }
     }

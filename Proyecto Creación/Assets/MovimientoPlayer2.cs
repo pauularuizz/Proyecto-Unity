@@ -18,6 +18,7 @@ public class MovimientoPlayer2 : MonoBehaviour
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
     [SerializeField] private TrailRenderer tr;
+    private SoundManager soundManager;
 
 
     private ParticleSystem _Ps;
@@ -27,6 +28,10 @@ public class MovimientoPlayer2 : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         healthSystem = GetComponent<HealthSystem>();
+    }
+    private void Awake()
+    {
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     // Update is called once per frame
@@ -76,6 +81,7 @@ public class MovimientoPlayer2 : MonoBehaviour
         playerRb.velocity = moveInput * dashingPower;
         tr.emitting = true;
         healthSystem.enabled = false;
+        soundManager.AudioSelector(4, 0.7f);
         yield return new WaitForSeconds(dashingTime);
         tr.emitting = false;
         isDashing = false;

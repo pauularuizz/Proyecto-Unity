@@ -38,21 +38,18 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
         PlayerHealthChange?.Invoke(_currentHealth/_maxHealth);
        
     }
-    public void Heal(float heal)
-    {
-
-        Instantiate(ParticleSystemPrefab, transform.position, transform.rotation);
-
-        Debug.Log("En teoria se cura");
-        _currentHealth += heal;
-        PlayerHealthChange?.Invoke(_currentHealth / _maxHealth);
-
-    }
+    
 
     private void Die()
     {
         
         PlayerDeath?.Invoke(PlayerInfo);
+        if (CompareTag("Player"))
+        {
+            Debug.Log("playeer muere");
+
+            PauseMenu.LoadMenu();
+        }
         Destroy(gameObject);
         
     }
@@ -66,6 +63,11 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
         {
             
             Die();
+        }
+        if (_currentHealth>100)
+        {
+
+            _currentHealth = 100;
         }
     }
 }

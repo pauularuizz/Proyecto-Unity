@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: "Assets/Scenes/Escena Men\xFA.unity"
-    guid: 32e59f9e0f2b651429fec5b4d0efc6af
+    path: Assets/MAIN MENU.unity
+    guid: 26fa86da1c198504fb4a25b38611c2c3
   - enabled: 1
     path: Assets/Scenes/Joseba.unity
     guid: bbefa7e9409bed740a451a00beae1e76

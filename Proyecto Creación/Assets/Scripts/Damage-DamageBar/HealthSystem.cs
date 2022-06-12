@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -46,9 +47,11 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
         PlayerDeath?.Invoke(PlayerInfo);
         if (CompareTag("Player"))
         {
-            Debug.Log("playeer muere");
+            Debug.Log("player muere");
 
-            PauseMenu.LoadMenu();
+            SceneManager.LoadScene("MAIN MENU");
+
+            Debug.Log("ABRE EL MENU");
         }
         Destroy(gameObject);
         

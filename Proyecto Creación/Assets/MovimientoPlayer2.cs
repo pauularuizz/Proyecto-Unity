@@ -55,7 +55,7 @@ public class MovimientoPlayer2 : MonoBehaviour
         playerAnimator.SetFloat("Horizontal", moveX);
         playerAnimator.SetFloat("Vertical", moveY);
         playerAnimator.SetFloat("Speed", moveInput.sqrMagnitude);
-        if (Input.GetKeyDown(KeyCode.Space)&&canDash)
+        if ((Input.GetKeyDown(KeyCode.Space)||Input.GetKeyDown(KeyCode.LeftShift)) &&canDash)
         {
            StartCoroutine( Dash());
         }

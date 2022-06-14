@@ -51,6 +51,7 @@ public class KeyHolder : MonoBehaviour
         {
             if (ContainsKey(door.GetKeyType()))
             {
+                soundManager.AudioSelector(5, 0.7f);
                 RemoveKey(door.GetKeyType());Debug.Log("llave borrada:");
                 door.OpenDoor();
             }

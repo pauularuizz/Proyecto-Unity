@@ -86041,7 +86041,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 125341346}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.21, y: -4.82, z: 35.298683}
+  m_LocalPosition: {x: -16.34, y: -6.33, z: 35.298683}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1551818486}
@@ -87348,7 +87348,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 299183953}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 7}
+  m_LocalPosition: {x: 0.9, y: -0.68, z: 7}
   m_LocalScale: {x: 0.61, y: 0.61, z: 1}
   m_Children:
   - {fileID: 1876561820}
@@ -87421,6 +87421,8 @@ MonoBehaviour:
   _currentHealth: 100
   _maxHealth: 100
   ParticleSystemPrefab: {fileID: 5075207521714815529, guid: 978c1b22a9e559147b42d66892268279,
+    type: 3}
+  HealthParticles: {fileID: 4340373597411456039, guid: 44833374ffb3d9d4bbad660cd5cd90ea,
     type: 3}
   BarraVidaEnemigo: {fileID: 2109783998}
 --- !u!114 &299183961
@@ -92884,7 +92886,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 336997809}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.65, y: -2.23, z: 35.298683}
+  m_LocalPosition: {x: -18.88, y: -6.94, z: 35.298683}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1551818486}
@@ -100546,7 +100548,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 068b0fdd179061441a0dbcfd282aff1b, type: 3}
   - {fileID: 8300000, guid: a074af2db6fed084fb2cdb415fd0b754, type: 3}
   - {fileID: 8300000, guid: a346c8f867c5cb04295eebc97f1445c3, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: c322984f8cc63474b93bab8397e6441b, type: 3}
   - {fileID: 0}
 --- !u!82 &691146700
 AudioSource:
@@ -138338,9 +138340,8 @@ MonoBehaviour:
     type: 3}
   bulletStart: {fileID: 1876561819}
   fieldOfView: {fileID: 1724471872}
-  bulletsLeft: 10
+  bulletsLeft: 12
   recargaDelay: 2
-  bulletSpeed: 30
   canShoot: 1
   bulletsLftUI: {fileID: 870649715}
 --- !u!114 &1968721908
@@ -138388,11 +138389,11 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.205
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 256
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

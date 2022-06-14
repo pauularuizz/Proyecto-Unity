@@ -13,10 +13,10 @@ public class PointAndShoot : MonoBehaviour
     [SerializeField] private FieldOfView fieldOfView;
     
     //recarga
-    [SerializeField]private const float cargador = 10f;
-    [SerializeField] private float bulletsLeft=10f;
-    [SerializeField] public float recargaDelay = 2f;
-    [SerializeField] public float bulletSpeed = 60.0f;
+    private const float cargador = 12f;
+    [SerializeField] private float bulletsLeft;
+    [SerializeField] public float recargaDelay ;
+    private float bulletSpeed = 60.0f;
     [SerializeField] private bool canShoot=true;
     public Text bulletsLftUI;
 
@@ -52,7 +52,7 @@ public class PointAndShoot : MonoBehaviour
         {
             bulletsLftUI.text = ("Bullets:" + bulletsLeft.ToString());
         }
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !PauseMenu.GameIsPaused)
         {
             if (canShoot)
             {
@@ -62,10 +62,6 @@ public class PointAndShoot : MonoBehaviour
             
                 fireBullet(direction, rotationZ);
             }
-           
-           
-            
-
         }
        
         fieldOfView.SetOrigin(player.transform.position);
@@ -77,6 +73,9 @@ public class PointAndShoot : MonoBehaviour
             StartCoroutine (Recagar());
             bulletsLeft = cargador;
         }
+        
+        
+        
     }
     void fireBullet(Vector2 direction, float rotationZ)
     {

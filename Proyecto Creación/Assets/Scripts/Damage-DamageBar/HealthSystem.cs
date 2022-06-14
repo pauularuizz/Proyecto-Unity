@@ -15,7 +15,8 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
     [SerializeField]
     float _maxHealth = 100;
     public ParticleSystem ParticleSystemPrefab;
-    
+    public ParticleSystem HealthParticles;
+
 
     public static Action <PlayerInfo> PlayerDeath;
     public static Action<float > PlayerHealthChange;
@@ -23,6 +24,7 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
    
     private void Start()
     {
+        Cursor.visible = false;
         _currentHealth = _maxHealth;
         PlayerHealthChange?.Invoke(_currentHealth / _maxHealth);
     }
@@ -30,10 +32,18 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
 
     public void TakeDamage(float damage)
     {
-      
-        Instantiate(ParticleSystemPrefab, transform.position, transform.rotation);
+        if (damage>0)
+        {
+            Debug.Log("En teoria sale sangre");
+            Instantiate(ParticleSystemPrefab, transform.position, transform.rotation);
+        }
+        if (damage<0)
+        {
+            Instantiate(HealthParticles, transform.position, transform.rotation);
+        }
         
-        Debug.Log("En teoria sale sangre");
+        
+        
         _currentHealth -= damage;
         
         PlayerHealthChange?.Invoke(_currentHealth/_maxHealth);
@@ -48,7 +58,7 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
         if (CompareTag("Player"))
         {
             Debug.Log("player muere");
-
+            Cursor.visible = true;
             SceneManager.LoadScene("MAIN MENU");
 
             Debug.Log("ABRE EL MENU");

@@ -4,24 +4,20 @@ using UnityEngine;
 
 public class Consumible : MonoBehaviour
 {
+    
     [SerializeField]
-    public float Heal;
+    public ParticleSystem particulas;
+  
     private void OnTriggerEnter2D(Collider2D other)
     {
-        var healing = other.GetComponent<IHeal>();
-
-        if (healing != null)
+        if (other==CompareTag("Player"))
         {
-            Destroy(gameObject);
-            healing.Heal(Heal);
-
+            Instantiate(particulas, transform.position, transform.rotation);
+            particulas.Play();
         }
        
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Destroy(gameObject);
-    }
+    
 
 }

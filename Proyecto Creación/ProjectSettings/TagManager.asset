@@ -18,6 +18,7 @@ TagManager:
   - Spawner
   - GunFlash
   - Bullet
+  - Heal
   layers:
   - Default
   - TransparentFX

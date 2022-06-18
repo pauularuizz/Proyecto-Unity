@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1744504037}
   m_Layer: 12
   m_Name: '}PocionVida'
-  m_TagString: Untagged
+  m_TagString: Heal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,3 +137,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particulas: {fileID: 4340373597411456039, guid: 44833374ffb3d9d4bbad660cd5cd90ea,
     type: 3}
+  volumen: 5.5

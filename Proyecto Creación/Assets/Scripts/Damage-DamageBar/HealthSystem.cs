@@ -16,6 +16,7 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
     float _maxHealth = 100;
     public ParticleSystem ParticleSystemPrefab;
     public ParticleSystem HealthParticles;
+    
 
 
     public static Action <PlayerInfo> PlayerDeath;
@@ -27,25 +28,43 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
         Cursor.visible = false;
         _currentHealth = _maxHealth;
         PlayerHealthChange?.Invoke(_currentHealth / _maxHealth);
+        if (CompareTag("Boss"))
+        {
+            _currentHealth = 2000;
+
+        }
     }
     public float CurrentHealth => _currentHealth;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (CompareTag ("Bullet"))
+        {
+            //CurrentHealth -= _bossdmg;
+            Debug.Log("boss dmg");
+            
+        } 
+    }
 
     public void TakeDamage(float damage)
     {
         if (damage>0)
         {
             Debug.Log("En teoria sale sangre");
+            //Debug.Log("Boss dmg");
             Instantiate(ParticleSystemPrefab, transform.position, transform.rotation);
         }
         if (damage<0)
         {
             Instantiate(HealthParticles, transform.position, transform.rotation);
         }
-        
-        
-        
-        _currentHealth -= damage;
-        
+
+
+
+        _currentHealth -= damage; 
+
+
+
         PlayerHealthChange?.Invoke(_currentHealth/_maxHealth);
        
     }
@@ -63,7 +82,9 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
 
             Debug.Log("ABRE EL MENU");
         }
+        
         Destroy(gameObject);
+
         
     }
     
@@ -74,20 +95,23 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
         BarraVidaEnemigo.value = _currentHealth;
         if (_currentHealth <= 0)
         {
-            
             Die();
+           
         }
-        if (_currentHealth>100)
+        if (_currentHealth>100 && !CompareTag("Boss"))
         {
 
             _currentHealth = 100;
+         
         }
+        
     }
+   
 }
 [Serializable]
 public struct PlayerInfo
 {
-   public string Name;
+    public string Name;
     public int Age;
-
 }
+

@@ -19,6 +19,7 @@ TagManager:
   - GunFlash
   - Bullet
   - Heal
+  - Boss
   layers:
   - Default
   - TransparentFX

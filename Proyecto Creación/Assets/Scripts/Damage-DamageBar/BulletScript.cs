@@ -2,31 +2,64 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class BulletScript : MonoBehaviour
 {
+    private Rigidbody2D _rigidbody;
+    public float Speed = 10;
+    public Rigidbody2D rb;
+    public GameObject bullet;
+    public GameObject bulletParent;
+
+    public float speed;
+    private Transform player;
+    public float shootingRange;
+    private float nextFireTime;
+    // public float fireRate = 1f; 
+    public float lineofSite;
+ 
+ 
     // Start is called before the first frame update
-    float moveSpeed = 7f;
-
-    Rigidbody2D rb;
-
-    MovimientoPlayer2 target;
-    Vector2 moveDirection;
     void Start()
     {
+        _rigidbody = GetComponent<Rigidbody2D>();
         rb = GetComponent<Rigidbody2D>();
-        target = GameObject.FindObjectOfType<MovimientoPlayer2>();
-        moveDirection = (target.transform.position - transform.position).normalized * moveSpeed;
-        rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
-        Destroy(gameObject, 3f);
+        SetVelocity();
+    }
+    private void Update()
+    {
+        float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
+
+        if (distanceFromPlayer < lineofSite && distanceFromPlayer > shootingRange)
+        {
+            transform.position = Vector2.MoveTowards(this.transform.position, player.position, speed * Time.deltaTime);
+        }
+        if (distanceFromPlayer <= shootingRange)
+        {
+            Debug.Log("jamaiu");
+            Instantiate(bullet, bulletParent.transform.position, Quaternion.identity);
+
+        }
     }
 
-    // Update is called once per frame
-    void OnTriggerEnter2D(Collider2D col)
+    void SetVelocity()
     {
-        if(col.gameObject.name.Equals("MovimientoPlayer2"))
-        {
-            Destroy(gameObject);
-        }
-        
+        _rigidbody.velocity = transform.right * Speed;
+     
+        Instantiate(bullet, bulletParent.transform.position, Quaternion.identity); 
     }
+
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
+
+
 }

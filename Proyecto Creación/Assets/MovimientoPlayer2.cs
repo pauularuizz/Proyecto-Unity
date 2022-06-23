@@ -59,7 +59,8 @@ public class MovimientoPlayer2 : MonoBehaviour
         {
            StartCoroutine( Dash());
         }
-      
+
+       
     }
     private void FixedUpdate()
     {
@@ -89,6 +90,12 @@ public class MovimientoPlayer2 : MonoBehaviour
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (CompareTag("Bullet"))
+        {
+            Debug.Log("VAMOOOOOOO"); 
+        }
+    }
 
-   
 }

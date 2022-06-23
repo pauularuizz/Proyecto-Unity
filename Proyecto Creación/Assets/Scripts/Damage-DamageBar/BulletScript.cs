@@ -9,6 +9,7 @@ public class BulletScript : MonoBehaviour
     public Rigidbody2D rb;
     Vector2 movedir;
     GameObject target;
+   
 
     private Transform player;
     //public float shootingRange;
@@ -26,7 +27,7 @@ public class BulletScript : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         movedir = (player.transform.position - transform.position).normalized * Speed;
         rb.velocity = new Vector2(movedir.x, movedir.y);
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, 2f);
 
     }
     private void Update()
@@ -37,13 +38,11 @@ public class BulletScript : MonoBehaviour
 
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (CompareTag("Player"))
         {
             Debug.Log("hit");
         }
-
-
     }
 }

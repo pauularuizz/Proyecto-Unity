@@ -28,18 +28,7 @@ public class BulletScript : MonoBehaviour
     }
     private void Update()
     {
-        float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
-
-        if (distanceFromPlayer < lineofSite && distanceFromPlayer > shootingRange)
-        {
-            transform.position = Vector2.MoveTowards(this.transform.position, player.position, speed * Time.deltaTime);
-        }
-        if (distanceFromPlayer <= shootingRange)
-        {
-            Debug.Log("jamaiu");
-            Instantiate(bullet, bulletParent.transform.position, Quaternion.identity);
-
-        }
+      
     }
 
     void SetVelocity()

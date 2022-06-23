@@ -47,9 +47,9 @@ public class BossMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!CompareTag("Player"))
+        if (CompareTag("Player"))
         {
-            Debug.Log("hithit"); 
+            
         }
 
 

@@ -30,8 +30,12 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
         PlayerHealthChange?.Invoke(_currentHealth / _maxHealth);
         if (CompareTag("Boss"))
         {
-            _currentHealth = 2000;
+            _currentHealth = 1000;
 
+        }
+        if (CompareTag("BadBoss"))
+        {
+            _currentHealth = 400; 
         }
     }
     public float CurrentHealth => _currentHealth;
@@ -57,6 +61,10 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
         if (damage<0)
         {
             Instantiate(HealthParticles, transform.position, transform.rotation);
+        }
+        if (CompareTag("Bullet"))
+        {
+            Debug.Log("Daño Bala"); 
         }
 
 
@@ -108,7 +116,11 @@ public class HealthSystem : MonoBehaviour, ITakeDamage
         
         
     }
-   
+    private void OnTriggerEnter(Collider other)
+    {
+        
+    }
+
 }
 [Serializable]
 public struct PlayerInfo
@@ -116,4 +128,5 @@ public struct PlayerInfo
     public string Name;
     public int Age;
 }
+
 

@@ -20,6 +20,7 @@ TagManager:
   - Bullet
   - Heal
   - Boss
+  - BadBoss
   layers:
   - Default
   - TransparentFX

@@ -9,7 +9,7 @@ public class BulletScript : MonoBehaviour
     public Rigidbody2D rb;
     Vector2 movedir;
     GameObject target;
-   
+    public GameObject bullet; 
 
     private Transform player;
     //public float shootingRange;
@@ -28,11 +28,15 @@ public class BulletScript : MonoBehaviour
         movedir = (player.transform.position - transform.position).normalized * Speed;
         rb.velocity = new Vector2(movedir.x, movedir.y);
         Destroy(gameObject, 2f);
+        
 
     }
     private void Update()
     {
-
+        if (Collider2D.Equals(player, bullet))
+        {
+            Debug.Log("hithihtit"); 
+        }
     }
 
 

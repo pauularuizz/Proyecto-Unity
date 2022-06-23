@@ -9,7 +9,7 @@ public class BossMovement : MonoBehaviour
     private Transform player;
     public float shootingRange;
     private float nextFireTime;
-    // public float fireRate = 1f; 
+    public float fireRate = 1f; 
     public float lineofSite;
     public GameObject bullet;
     public GameObject bulletParent;
@@ -32,11 +32,11 @@ public class BossMovement : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player.position, speed * Time.deltaTime);
         }
-        if (distanceFromPlayer <= shootingRange)
+        if (distanceFromPlayer <= shootingRange && nextFireTime <Time.time)
         {
             Debug.Log("jamaiu");
             Instantiate(bullet, bulletParent.transform.position, Quaternion.identity);
-
+            nextFireTime = Time.time + fireRate; 
         }
 
 

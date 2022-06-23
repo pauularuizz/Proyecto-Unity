@@ -5,50 +5,45 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class BulletScript : MonoBehaviour
 {
-    private Rigidbody2D _rigidbody;
-    public float Speed = 10;
+    public float Speed = 7f;
     public Rigidbody2D rb;
-    public GameObject bullet;
-    public GameObject bulletParent;
+    Vector2 movedir;
+    GameObject target;
 
-    public float speed;
     private Transform player;
-    public float shootingRange;
-    private float nextFireTime;
+    //public float shootingRange;
+    //private float nextFireTime;
     // public float fireRate = 1f; 
-    public float lineofSite;
- 
- 
+    //public float lineofSite;
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
         rb = GetComponent<Rigidbody2D>();
-        SetVelocity();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        movedir = (player.transform.position - transform.position).normalized * Speed;
+        rb.velocity = new Vector2(movedir.x, movedir.y);
+        Destroy(gameObject, 3f);
+
     }
     private void Update()
     {
-      
+
     }
 
-    void SetVelocity()
-    {
-        _rigidbody.velocity = transform.right * Speed;
-     
-        Instantiate(bullet, bulletParent.transform.position, Quaternion.identity); 
-    }
 
 
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        if (CompareTag("Player"))
+        {
+            Debug.Log("hit");
+        }
+
+
     }
-
-    private void OnBecameInvisible()
-    {
-        Destroy(gameObject);
-    }
-
-
 }
